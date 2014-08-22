@@ -11,28 +11,37 @@ Replace data_source_name with the name of your data source.
 Replace database_username and database_password
 with the SQL Server database username and password.
 */
-$data_source='ry76ak4ig9.database.windows.net';
-$user='mike';
-$password='Ms10kl31011';
+$myServer = "ry76ak4ig9.database.windows.net";
+$myUser = "mike";
+$myPass = "Ms10kl31011";
+$myDB = "gedtest";
 
-$conn=odbc_connect($data_source,$user,$password);
-if (!$conn){
-	if (phpversion() < '4.0'){
-		exit("Connection Failed: . $php_errormsg" );
-	}
-	else{
-		exit("Connection Failed:" . odbc_errormsg() );
-	}
+//connection to the database
+$dbhandle = mssql_connect($myServer, $myUser, $myPass)
+  or die("Couldn't connect to SQL Server on $myServer"); 
+
+//select a database to work with
+$selected = mssql_select_db($myDB, $dbhandle)
+or die("Couldn't open database $myDB");
+
+//declare the SQL statement that will query the database
+$query = "SELECT * ";
+$query .= "FROM test ";
+
+//execute the SQL query and return records
+$result = mssql_query($query);
+
+$numRows = mssql_num_rows($result);
+echo "<h1>" . $numRows . " Row" . ($numRows == 1 ? "" : "s") . " Returned </h1>";
+
+//display the results
+while($row = mssql_fetch_array($result))
+{
+	echo "<li>" . $row["id1"] . "</li>";
 }
-// Select the database 'php'
-$conndb = mssql_select_db('gedtest', $link);
-// This query generates a result set with one record in it.
-$sql="SELECT count(*) FROM dbo.test";
+//close the connection
+mssql_close($dbhandle);
 
-# Execute the statement.
-$rs=odbc_exec($conn,$sql);		
-		
-ECHO $rs
 
 ?>
 
