@@ -6,10 +6,6 @@ $myUser = "mike";
 $myPass = "Ms10kl31011";
 $myDB = "gedtest";
 
-//connection to the database
-$dbhandle = mssql_connect($myServer, $myUser, $myPass)
-or die("Couldn't connect to SQL Server on $myServer");
-
 
 
 ?>
