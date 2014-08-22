@@ -16,6 +16,20 @@ or die("Cannot start ADO");
 $connStr = "PROVIDER=SQLOLEDB;SERVER=".$myServer.";UID=".$myUser.";PWD=".$myPass.";DATABASE=".$myDB;
 $conn->open($connStr); //Open the connection to the database
 
+//declare the SQL statement that will query the database
+$query = "SELECT * FROM test";
+
+//execute the SQL statement and return records
+$rs = $conn->execute($query);
+
+$num_columns = $rs->Fields->Count();
+echo $num_columns . "<br>";
+
+for ($i=0; $i < $num_columns; $i++) {
+	$fld[$i] = $rs->Fields($i);
+}
+
+echo "<table>";
 
 ?>
 
