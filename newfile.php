@@ -1,7 +1,7 @@
 <?php
 echo 'this is my first page ';
 
-$myServer = "ry76ak4ig9.database.windows.net";
+$myServer = "ry76ak4ig9.database.windows.net,1433";
 $myUser = "mike";
 $myPass = "Ms10kl31011";
 $myDB = "gedtest";
