@@ -24,6 +24,8 @@ if (!$conn){
 		exit("Connection Failed:" . odbc_errormsg() );
 	}
 }
+// Select the database 'php'
+$conndb = mssql_select_db('gedtest', $link);
 // This query generates a result set with one record in it.
 $sql="SELECT count(*) FROM dbo.test";
 
