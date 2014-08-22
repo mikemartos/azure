@@ -31,5 +31,23 @@ for ($i=0; $i < $num_columns; $i++) {
 
 echo "<table>";
 
+while (!$rs->EOF)  //carry on looping through while there are records
+{
+	echo "<tr>";
+	for ($i=0; $i < $num_columns; $i++) {
+		echo "<td>" . $fld[$i]->value . "</td>";
+	}
+	echo "</tr>";
+	$rs->MoveNext(); //move on to the next record
+}
+
+echo "</table>";
+
+//close the connection and recordset objects freeing up resources
+$rs->Close();
+$conn->Close();
+
+$rs = null;
+$conn = null;
 ?>
 
