@@ -1,5 +1,5 @@
 <?php
-echo 'this is my first page x ';
+echo 'this is my first page <br> ';
 
 $myServer = "ry76ak4ig9.database.windows.net";
 $myUser = "mike";
@@ -23,7 +23,7 @@ $query = "SELECT * FROM test";
 $rs = $conn->execute($query);
 
 $num_columns = $rs->Fields->Count();
-echo $num_columns . "<br>";
+echo $num_columns . "num columns <br>";
 
 for ($i=0; $i < $num_columns; $i++) {
 	$fld[$i] = $rs->Fields($i);
