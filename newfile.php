@@ -16,7 +16,7 @@ $user='mike';
 $password='Ms10kl31011';
 		
 // This query generates a result set with one record in it.
-$sql="SELECT * FROM TEST";
+$sql="SELECT count(*) FROM TEST";
 
 # Execute the statement.
 $rs=odbc_exec($conn,$sql);		
