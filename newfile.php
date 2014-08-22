@@ -1,5 +1,5 @@
 <?php
-echo 'this is my first page ';
+echo 'this is my first page x ';
 
 $myServer = "ry76ak4ig9.database.windows.net";
 $myUser = "mike";
