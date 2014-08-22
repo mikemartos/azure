@@ -1,8 +1,5 @@
 <?php
-echo 'this is my first page \n';
-
-echo 'how is it going';
-
+echo 'this is my first page ';
 
 /*
  PHP MSSQL Example
