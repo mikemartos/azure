@@ -17,7 +17,7 @@ $connStr = "PROVIDER=SQLOLEDB;SERVER=".$myServer.";UID=".$myUser.";PWD=".$myPass
 $conn->open($connStr); //Open the connection to the database
 
 //declare the SQL statement that will query the database
-$query = "SELECT * FROM ACCOUNTS";
+$query = "SELECT * FROM ACCOUNT";
 
 //execute the SQL statement and return records
 $rs = $conn->execute($query);
