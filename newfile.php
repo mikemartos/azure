@@ -49,7 +49,5 @@ $conn->Close();
 
 $rs = null;
 $conn = null;
-echo 'new test!'
-
 ?>
 
